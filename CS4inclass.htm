@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title>image hotspots or image maps</title> 
+
+	<style type="text/css">
+	/* Your styles go here */ 
+ h1,p{text-align:center;}   
+    
+ body {background-image: url(music-1.gif); 
+background-repeat: repeat; 
+background-position: center; 
+background-attachment:fixed;}  
+    img#b {/*float:left; */border:5px solid red;width:40%;
+    margin-left: 40px; padding:10px; 
+position:absolute; top: 500px; left: 400px;}  
+h2{font-weight:bold;color:yellow;font-style:italic; font-size:3em;} 
+
+	</style>
+	
+	
+  </head>
+
+  <body>
+	<!-- Your HTML goes here -->
+	<h1> Image Hotspots and Image Maps</h1>	
+
+	<map name="middlesex" id="M">  
+		<area shape="rect" coords="301,351,330,383" href="http://www.wellesleyma.gov" alt="Town of Wellesley"/> 
+
+	</map>  
+    <p> 
+        <img src="Middlesex-1.gif" alt="Middlesex County Map" title="Middlesex County" usemap="#middlesex"/>  
+    </p>  
+    <img id="b" src="beaver-2.jpg" alt=" Beaver Image" title="Go Babo"/>  
+    <h2>Go Beavers</h2> 
+   
+	
+  </body>
+</html>
