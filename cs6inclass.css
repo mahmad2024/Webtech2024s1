@@ -1,0 +1,8 @@
+table, td{border:2px solid black;} 
+table{font-family:Arial;color:navy;text-align:center; 
+width:70%; margin-right:auto;margin-left:auto;background-image: url(music-1.gif);margin-top:10%; border-collapse:collapse;} 
+tr#row1{background-color:yellow;font-weight:bold;}  
+.c1{width:30%;} 
+.c2{width:45%;} 
+.c3{width:25%;}
+caption{font-family:Lucida Handwriting; color:red; font-weight:bold; margin-bottom:2%;}
