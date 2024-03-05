@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head> 
+    
+	<meta http-equiv="content-type" content="text/javascript; charset=utf-8" /> 
+	<title>CS14 tuesday</title> 
+    <script type="text/javascript"> 
+	<style>    
+     
+
+    
+	/* Your styles go here */  
+    img{margin-right:5%;margin-left:5%;}  
+    function makeBig(shankar) 
+    { 
+        var myimg;
+       if(shankar=="one") 
+       {
+        myimg=document.getElementById("one");
+        myimg.width=myimg.width*1.5;
+       } 
+       else 
+       { 
+        myimg=document.getElementById("two");
+        myimg.width=myimg.width*1.5;
+
+       }
+        myimg.width=myimg.width*1.5;
+        alert(myimg.width); 
+    } 
+    function makeSmall(shankar) 
+    {  
+        var myimg;
+        if (shankar=="one") 
+        { 
+        myimg=document.getElementById("one") 
+        alert(myimg.width);
+
+        } 
+        else 
+        { 
+        myimg=document.getElementById("two") 
+        alert(myimg.width);
+       
+
+        }
+       
+    }
+    
+	</style> 
+    </script>
+	
+	
+	
+  </head>
+
+  <body>
+	<!-- Your HTML goes here -->  
+    <h1>Passing Parameters and Manipulating Images</h1>
+	<img id="one" onmouseover="makeBig(this.id)" onmouseout="makeSmall(this.id)"   src="planes-1.jpg" title="flying high" alt="plane image" width="250"/> 
+	<img id="two" onmouseover="makeBig(this.id)" onmouseout="makeSmall(this.id)"  src="Ships-1.jpg" title="sailing far" alt="ship image" width="250"/>  
+		
+	
+	
+  </body>
+</html>
