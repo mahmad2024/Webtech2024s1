@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+
+	    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+	    <title>Quiz 2</title> <!-- No credit if you do, -1 if you do not -->
+        <style type="text/css"> 
+         h1 { text-align:center;
+            font-family: Arial, sans-serif;
+            color: yellow;
+            background-image: url('facebook.png');
+            padding-left: 200px; 
+            padding-right: 200px;
+        }form {
+            background-color: silver;
+            color: navy;
+            font-family: Arial, sans-serif;
+            padding-right: 300px;
+            padding-left: 100px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin-left: 300px; 
+            margin-right: 300px; 
+        }
+        ul {
+            list-style-image: url('star.gif');
+        }
+        ol {
+            list-style-type: lower-greek; 
+        } 
+        #list{text-align:left;}
+         
+        
+        </style>
+        
+    </head>
+
+    <body>
+	    <!-- Your HTML goes here -->
+        <!-- The title, About Facebook must use h1 tag -->
+        <!-- It uses Arial font, yellow color. (1) -->
+        <!-- It must have the image facebook.png as the background. (2)-->
+        <!-- There must be a 200px (white) space to the left and right (1)-->
+            
+        <!-- Below the title, construct the form shown on screen (7)--> 
+        <!-- 1. The form has a text box to capture your name - size is 20 -->
+        <!-- 2. The form has a radio button to capture whether you like -->
+        <!--    Facebook. Yes and No options. -->
+        <!-- 3. The form has a dropdown to see how many times a day you access -->
+        <!--    FB. The three values are 100, 50, and 25. -->
+        <!-- 4. The form has a Submit Data and a Clear Data button to submit -->
+        <!--    and reset the form data respectively. -->
+        <!--    The form has a silver background, navy font, arial. (2)-->
+        <!--    The form has a 300px white space to the right and left.(2)-->
+        <!--    The form has a 100px silver space to the left. (1)-->
+        <!--    The form has a 50px silver space to the top and bottom. (2)-->
+            
+        <!-- For the last 5 points do the following: -->
+        <!-- Create a nested list using the data given.-->
+        <!-- The outer list must be unordered -(1)-->
+        <!-- It must use the image star.gif as the bullet. (2)-->
+        <!-- The inner list must be ordered with small greek numbering.(2)-->
+        <!-- This h1 must not have any background or color. -->
+        <!-- No styles needed. In other words, don't touch it. --> 
+        <h1>About Facebook</h1>
+        <form>
+            <label for="name">Your name:</label>
+            <input type="text" id="name" name="name" size="20"><br>
+    
+            <label>Do you like Facebook?</label>
+            <input type="radio" id="likeYes" name="likeFB" value="yes">
+            <label for="likeYes">Yes</label>
+            <input type="radio" id="likeNo" name="likeFB" value="no">
+            <label for="likeNo">No</label><br>
+    
+            <label for="accessTimes">How many times a day do you access Facebook?</label>
+            <select id="accessTimes" name="accessTimes">
+                <option value="100">100</option>
+                <option value="50">50</option>
+                <option value="25">25</option>
+            </select><br>
+    
+            <input type="submit" value="Submit Data">
+            <input type="reset" value="Clear Data">
+        </form> 
+        
+    
+        <h1 id="list" style="background:none; color:black;">Courses offered in Babson</h1>
+        <ul>
+            <li>Management Courses
+                <ol type="i">
+                    <li>FME</li>
+                    <li>SME</li>
+                </ol>
+            </li>
+            <li>Liberal Arts Courses
+                <ol>
+                    <li>FCI</li>
+                    <li>Critical Race</li>
+                </ol>
+            </li>
+        </ul> 
+    
+    </body>
+    </html> 
+ 
+
+        
+           
+
+    
+    </body>
+</html>
