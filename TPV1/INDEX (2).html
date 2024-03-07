@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Version 1</title>
+
+    <style>
+        /* Your styles go here */  
+        h1{font-family:cursive;}
+        p#text{font-family:cursive;}
+        table {
+            text-align: center;
+            width: 60%;
+            margin-right: auto;
+            margin-left: auto;
+            font-family: cursive;
+            font: size 20px;
+            font-display: center;
+            border: 2px solid black;
+        }
+
+        table,
+        td {
+            border: 2px solid black;
+        }
+
+        div#banner {
+            background: url(81f8e8a091d1e38de545bf3d6e310630.jpg);
+            padding: 5%;
+        }
+
+        h1#heading {
+            color: red;
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+
+        /*this is where i start my menu styles*/
+        .topnav {
+            background-color: pink;
+            overflow: hidden;
+            font-family: Lucida Handwriting;
+        }
+
+        .topnav a {
+            float: left;
+            color: black;
+            display: block;
+            text-align: center;
+            padding: 14px 40px;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .active {
+            background-color: pink;
+            color: white;
+        }
+
+        .drpdwn {
+            float: left;
+            overflow: hidden;
+        }
+
+        .drpdwn .drpbtn {
+            font-size: 1em;
+            border: none;
+            outline: none;
+            color: black;
+            padding: 14px 40px;
+            font-family: inherit;
+            background-color: inherit;
+            margin: 0;
+        }
+
+        .drpdwncontent {
+            position: absolute;
+            display: none;
+            background-color: whitesmoke;
+            z-index: 1;
+        }
+
+        .drpdwn:hover .drpdwncontent {
+            display: block;
+        }
+
+        .drpdwncontent a {
+            /* these are all the A tags*/
+            float: none;
+            display: block;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            text-align: left;
+        }
+
+        .topnav a:hover,
+        .drpdwn:hover .drpbtn {
+            /* these make highlight the menu items*/
+            background-color: red;
+            color: black;
+        }
+
+        .drpdwncontent a:hover {
+            /* this just highlights the A tag or the drop down content to light grey*/
+            background-color: hotpink;
+            color: black;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 750px) {
+
+            .topnav a:not(:first-child),
+            .drpdwn .drpbtn {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 750px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .topnav.responsive .drpdwn {
+                float: none;
+            }
+
+            .topnav.responsive .drpdwncontent {
+                position: relative;
+            }
+
+            .topnav.responsive .drpdwn .drpbtn {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .about {
+            width: 27%;
+            margin: 3%;
+            text-align: justify;
+        }
+
+        @media screen and (max-width:750px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .about {
+                width: 80%;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        function myFunction() {
+            var x = document.getElementById("mytopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <!-- Your HTML goes here -->
+    <div id="banner">
+        <h1 id="heading">Style Guide to Life in College</h1> \
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <!---MY menu buildout-->
+    <div class="topnav" id="mytopnav">
+        <a href="Version1.html" class="active">home</a>
+        <a href="contact me.html">Contact Me</a></a> 
+        <a href="About Me.htm">About Me</a> 
+        <a href="Where To Buy.htm">Where To Buy</a> 
+        <a href="MyFavOutfits.htm">My Favorite Outfits</a>
+        <div class="drpdwn">
+            <button class="drpbtn">Occasions</button>
+            <div class="drpdwncontent">
+                <a href="Everyday Outfits.html">Everyday Class Outfit</a>
+                <a href="Dinner.html">Dinner</a>
+                <a href="fun with friends.html">Fun with Friends</a>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <!---this below is the content piece-->
+    <div class="row">
+        <div class="about" id="content1">
+
+
+        </div>
+        <div class="about" id="content2">
+            <h2>Newest College It girl</h2>
+            <p id="text">
+
+
+                This is the ultimate Style Guide for the newest It girl. Use these tips and you are guarenteed the best
+                outfit in the room.
+
+                Being an "IT girl" in college, someone who is well-dressed, nice, and confident, is about more than just
+                fashion. It's also about your attitude, kindness, and overall presence. Here are some tips to help you
+                embody the IT girl persona:
+
+                Define Your Style:
+
+                Develop a personal style that makes you feel confident. It could be classic, trendy, bohemian, or a mix
+                of styles. Invest in key pieces that reflect your taste.
+                Wear What Makes You Feel Confident:
+
+                Dress in outfits that make you feel good about yourself. When you feel confident in what you're wearing,
+                it will show in your demeanor.
+                Accessorize:
+
+                Pay attention to accessories. A statement piece, such as a stylish bag, sunglasses, or jewelry, can
+                elevate a simple outfit.
+                Grooming and Personal Care:
+
+                Take care of your personal grooming. Good hygiene and a well-kept appearance contribute to an overall
+                polished look.
+                Be Approachable:
+
+                Smile and be approachable. A positive attitude and friendliness can make you stand out.
+                Engage in Conversations:
+
+                Be open to conversations and engage with others. Show genuine interest in people and make an effort to
+                connect.
+                Confidence:
+
+                Stand tall and maintain good posture. Confidence comes from within, so believe in yourself and your
+                abilities.
+                Be Inclusive:
+
+                Foster a sense of inclusivity. Be kind and open-minded, making others feel welcome and valued.
+                Positive Energy:
+
+                Radiate positive energy. Be optimistic, and try to find the good in every situation. A positive attitude
+                is contagious.
+                Be Genuine:
+
+                Be yourself. Authenticity is attractive, and people are drawn to those who are genuine.
+                Stay Informed:
+
+                Stay informed about current events, trends, and topics of interest. Being well-rounded and knowledgeable
+                can make conversations more engaging.
+                Network:
+
+                Build a network of friends and acquaintances. Attend social events, join clubs, and participate in
+                activities to expand your circle.
+                Balance:
+
+                Balance trendiness with practicality. While staying on-trend can be fun, ensure that your outfits are
+                appropriate for the college environment.
+                Maintain Professionalism:
+
+                Remember that college is a professional environment. Dress appropriately for classes, events, and any
+                professional opportunities that may arise.
+                Lead by Example:
+
+                Lead by example in terms of kindness, work ethic, and style. Be a positive influence on others.
+                Being an IT girl is not just about fashion; it's about embodying confidence, kindness, and authenticity.
+                Strive to be the best version of yourself, and let your positive energy and style shine.
+            </p>
+
+        </div>
+        <div class="about" id="content3">
+
+
+
+        </div>
+
+
+    </div>
+    <h1>Video Example</h1>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/UnLoEcrfKCk?si=kTCoEOPCZekJau2Z"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+
+    <audio controls autoplay>
+        <source src="perfect-beauty-191271.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h1> ZadigetVoltaire is a staple brand</h1> 
+
+   
+   <map name="zadigStore" id="Z">
+    <area shape="rect" coords="362,97,213,121" href="https://zadig-et-voltaire.com/us/en/" alt="ZadigetVoltaire"/>
+</map>
+<img src="basse-def-3.jpg" alt="ZadigetVoltaire Paris Store" title="ZadigetVoltaire" usemap="#zadigStore" /> 
+
+    
+       
+
+
+    <table>
+        <caption>A little Vocabulary Breakdown</caption>
+        <tr id="row1">
+            <td class="c1"> Trendy Styles</td>
+            <td class="c2"> Definition</td>
+
+
+
+        </tr>
+        <tr>
+            <td class="c1"> Coquette </td>
+            <td class="c2"> Outfits that are composed of lace,pearls,and bows. They are often times majority pastel pink
+                as well.</td>
+
+        </tr>
+        <tr>
+            <td class="c1"> Elegant </td>
+            <td class="c2">Outfits that are very suiting for the individual's body type, more modest. The outfits tend
+                to be comprised of solid colors, more of a deeper tone.</td>
+
+        </tr>
+        <tr>
+            <td class="c1 "> Rocker Chic </td>
+            <td class="c2">Outfits that involve studs, or statement jewelry that is oftentimes silver. Many pieces worn
+                in this style have leather, or lace.</td>
+
+        </tr>
+        <tr>
+            <td class="c1"> Minimalist </td>
+            <td class="c2">Outfits that are monochromatic,lack design, and texture. A popular item to wear that falls
+                within this style are oversized blazers.</td>
+
+        </tr>
+
+
+
+
+
+
+</body>
+
+</html>
