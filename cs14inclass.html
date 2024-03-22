@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+   <head>
+
+       <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+       <title>Please change the title  </title>
+       <!-- Don't worry about the styles. I just added them to make the page look better -->
+       <style type="text/css">
+           h1 {
+               margin-top: 50px;
+               margin-bottom: 50px;
+           }
+           h1 {
+               text-align: center;
+           }
+           img {border:5px solid black; display:block; margin:auto;}
+           p {margin-right:100px; margin-left:100px; margin-bottom:50px;font-family:Arial;}
+       </style>
+
+       <script type="text/javascript">
+            function showImage()
+            {
+               var myinp, myimg;
+               myimg = document.getElementById("one");
+               myinp = prompt("Please enter one of the four values: shamrock, clover, thyme, maple");
+               myinp = myinp.toLowerCase();
+               if (myinp == "shamrock")
+               {
+                   myimg.src = "shamrock-1.jpg";
+                   myimg.alt = "Shamrock Image";
+                   myimg.title = "Super Shamrock";
+               }
+               else if (myinp == "clover")
+               {
+                   myimg.src = "clover-1.jpg";
+                   myimg.alt = "Clover Image";
+                   myimg.title = "Super Clover";
+               }
+               else if (myinp == "thyme")
+               {
+                   myimg.src = "thyme-1.jpg";
+                   myimg.alt = "Thyme Image";
+                   myimg.title = "Super Thyme";
+               }
+               else if (myinp == "maple")
+               {
+                   myimg.src = "maple-1.jpg";
+                   myimg.alt = "Maple Image";
+                   myimg.title = "Super Maple";
+               }
+               else 
+               {
+                   alert("Please enter one of the four values only");
+               }
+            }  
+
+            function changeImage(x)
+            {
+               var myImg;
+               myImg = document.getElementById("two");
+               
+               if (x == "two")
+               {
+                   myImg.src = "Ships-1.jpg";
+                   myImg.alt = "ships Image";
+                   myImg.title = "ships";
+               }
+               else if (x == "three")
+               {
+                   myImg.src = "planes-1.jpg";
+                   myImg.alt = "Planes";
+                   myImg.title = "Flying High";
+               } 
+               else
+               {
+                   alert("This is wrong");
+               }
+            }
+
+          
+       </script>
+       
+   </head>
+
+   <body>
+       <!-- Your HTML goes here -->
+       
+       <!-- PROBLEM TWO -->
+       <h1> Using Inputs with Conditional Statements - 2</h1>
+       <div> <p>
+           When the user clicks on the image (placeholder shown) below, ask the user to 
+           input one of 4 values: Shamrock, Clover, Thyme or Maple. Based on what the user
+           provides, show the corresponding image. The 4 images are provided to you. 
+           If you get this to work, then, what if the user types in using all-lower-case or 
+           all-upper-case? How will you change the code to cover that?
+       </p>
+       </div>
+       <div>
+       <img id="one" onclick="showImage()" src="" alt="Image Goes Here" title="" width="200"/>
+       </div>
+
+       <!-- END OF PROBLEM TWO.-->
+
+       <!-- PROBLEM 3- We may/not get to this in class today.-->
+       <h1> Changing the Image when you click on it</h1>
+       <div><p>
+           Given below is an image of planes. When you click on it,
+           change it to the image of ships. The way the function must work is, 
+           no matter what the image is, when you click on it, it must change to the 
+           other image. The ALT and TITLE must change appropriately.
+       </p></div>
+       <div>
+           <img id="two" onclick="changeImage(this.id)" src="planes.jpg" alt="Planes" title="Flying High" width="200"/>
+           <img id="three" onclick="changeImage(this.id)" src="Ships.jpg" title="sailingfar" alt="ship image" width="250px"/>
+       </div>
+   
+   </body>
+</html>
