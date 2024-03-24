@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Homework 3 - processing forms</title>
+
+	<style>
+		/* Your styles go here */
+		form {
+			background-color: silver;
+			font-family: Arial;
+			color: Navy;
+			padding-left: 50px;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			margin-right: auto;
+			margin-left: auto;
+			width: 60%;
+		}
+
+		.but {
+			width: 200px;
+			height: 60px;
+			background-color: magenta;
+			color: black;
+		}
+
+		p#desc {
+			margin: 50px 200px;
+			font-family: cursive;
+		}
+
+		h3 {
+			font-family: lucida handwriting;
+			font-size: 3em;
+			text-align: center;
+		}
+	</style>
+
+	<script>
+		/* Your JavaScript goes here */
+		function calculateAmount() {
+			var product = document.getElementsByName('product')[0].value.toLowerCase();
+			var quantity = document.getElementsByName('quantity')[0].value;
+			var amountDueField = document.getElementsByName('AmtDue')[0];
+
+			var price;
+			switch (product) {
+				case 'milk':
+					price = 3.50;
+					break;
+				case 'apple':
+					price = 0.99;
+					break;
+				case 'fish':
+					price = 5.99;
+					break;
+				default:
+					amountDueField.value = 'Invalid Product';
+					return;
+			}
+
+			if (isNaN(quantity) || quantity === '') {
+				amountDueField.value = 'Invalid Quantity';
+				return;
+			}
+
+			var amountDue = price * parseFloat(quantity);
+			amountDueField.value = '$' + amountDue.toFixed(2);
+		}
+	</script>
+</head>
+
+<body>
+	<!-- Your HTML goes here -->
+	<h3> Homework 3</h3>
+	<p id="desc">
+		The form given below has 3 fields. Let us assume that the user will type in
+		the name of one of 3 products: Milk, Apple, or Fish. The user may enter these
+		using any mix of cases, so be aware. You need to check to ensure that the user
+		enters a value. If it is not one of these 3, let the user know.
+		Then the user will enter a quantity. You need to check to ensure that a quantity is entered
+		(you may assume that 0 is a valid quality) and that the value is numeric.
+		Once validated, use the following costs - 1 bottle of milk is $3.50; one
+		apple is $0.99 and one pound of fish is $5.99 - and show the amount owed
+		in the third field. All of this should be done when the appropriate
+		button is pressed. The amount must be shown with 2 decimal places and prefixed with
+		a $ (dollar) sign.
+	</p>
+
+	<form action="" method="POST">
+		<p>
+			<input type="text" name="product" size="20" placeholder="Enter product..." />
+			&nbsp; &nbsp;&nbsp;
+			<input type="text" name="quantity" size="20" placeholder="Enter quantity.." />
+		</p>
+		<p>
+			<input type="text" name="AmtDue" size="20" placeholder="show amount due" />
+		</p>
+		<p>
+			<input class="but" type="submit" name="submit" value="What Do I Owe" />
+			&nbsp; &nbsp;&nbsp;
+			<input class="but" type="reset" name="reset" value="Clear All" />
+		</p>
+	</form>
+	<h2>ChatGPT</h2>
+	<p>
+		I am super surprised with the way that the two pieces of code differ. I inputted the prompt into ChatGpt 3.5,
+		and expected it to be similar to what I spent hours working on. In the JavaScript portion there is a function
+		called calculateAmount, however it was not defined in the input section (onclick), which is very incorrect. The
+		alert commands are also incorrect, compared to my code. I also see that the defining the variables are vastly
+		different. There is no if statement for product, which is a vital piece that is missing. After, every variable
+		in the beginning there is getElementById, which I am not sure why that is there. The if statement for quantity
+		does not take in consideration that we are considering 0 as a valid quantity, and are looking for numerical
+		numbers above zero. I am confused why parseFloat is in the multiplication section, rather than at the top when
+		the quantity variable was defined. The two decimal points are also supposed to be after the multiplication, not
+		at the bottom with the incorrect set up for AmountDue.Value. All in all, there is a lot wrong with this code,
+		and I am honestly surprised that chatGPT did not do a better job.
+	</p>
+
+
+</body>
+
+</html>
