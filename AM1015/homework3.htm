@@ -19,7 +19,7 @@
 	
 	<script>
 	/* Your JavaScript goes here */  
-    function returnAmount() 
+  function returnAmount() 
     {
        var myf, myproduct, myquantity, AmountDueField;
        myf=document.getElementById("form");
@@ -30,29 +30,29 @@
 
        if (myproduct !== 'milk' && myproduct !== 'apple' && myproduct !== 'fish') 
         {
-			alert('Please enter a valid product: Milk, Apple, or Fish.');
-			return false;
-		   }  
+            alert('Please enter a valid product: Milk, Apple, or Fish.');
+            return false;
+		    }  
 
-       if (isNaN(myquantity) || myquantity < 0)  
-       {  
-       
-    alert('Please enter a valid numeric quantity that is 0 or greater.');
-    return false; 
+       else if (isNaN(myquantity) || myquantity < 0)  
+        {  
+          alert('Please enter a valid numeric quantity that is 0 or greater.');
+          return false; 
         }
-         var pricePerUnit = 0;
-		switch (myproduct)  
+        else
         {
-			case 'milk': pricePerUnit = 3.50;break;
-			case 'apple': pricePerUnit = 0.99;break;
-			case 'fish': pricePerUnit = 5.99;break;
-		}
-		var AmountDue = (pricePerUnit * myquantity).toFixed(2); 
-        AmountDueField.value = `$${AmountDue}`;
-
-       return false; 
+         var pricePerUnit = 0;
+		      switch (myproduct)  
+              {
+            case 'milk': pricePerUnit = 3.50;break;
+            case 'apple': pricePerUnit = 0.99;break;
+            case 'fish': pricePerUnit = 5.99;break;
+          }
+          var AmountDue = (pricePerUnit * myquantity).toFixed(2); 
+          AmountDueField.value = `$${AmountDue}`; 
+          return false; 
+        }
 }
-	
 	
        
 
