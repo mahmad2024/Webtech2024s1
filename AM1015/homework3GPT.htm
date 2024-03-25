@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Homework 3 - processing forms</title>
-
+	<title>Homework 3 - Processing Forms</title>
 	<style>
-		/* Your styles go here */
 		form {
 			background-color: silver;
 			font-family: Arial;
@@ -38,89 +35,83 @@
 			text-align: center;
 		}
 	</style>
-
-	<script>
-		/* Your JavaScript goes here */
-		function calculateAmount() {
-			var product = document.getElementsByName('product')[0].value.toLowerCase();
-			var quantity = document.getElementsByName('quantity')[0].value;
-			var amountDueField = document.getElementsByName('AmtDue')[0];
-
-			var price;
-			switch (product) {
-				case 'milk':
-					price = 3.50;
-					break;
-				case 'apple':
-					price = 0.99;
-					break;
-				case 'fish':
-					price = 5.99;
-					break;
-				default:
-					amountDueField.value = 'Invalid Product';
-					return;
-			}
-
-			if (isNaN(quantity) || quantity === '') {
-				amountDueField.value = 'Invalid Quantity';
-				return;
-			}
-
-			var amountDue = price * parseFloat(quantity);
-			amountDueField.value = '$' + amountDue.toFixed(2);
-		}
-	</script>
 </head>
 
 <body>
-	<!-- Your HTML goes here -->
-	<h3> Homework 3</h3>
+	<h3>Homework 3</h3>
 	<p id="desc">
-		The form given below has 3 fields. Let us assume that the user will type in
-		the name of one of 3 products: Milk, Apple, or Fish. The user may enter these
-		using any mix of cases, so be aware. You need to check to ensure that the user
-		enters a value. If it is not one of these 3, let the user know.
-		Then the user will enter a quantity. You need to check to ensure that a quantity is entered
-		(you may assume that 0 is a valid quality) and that the value is numeric.
-		Once validated, use the following costs - 1 bottle of milk is $3.50; one
-		apple is $0.99 and one pound of fish is $5.99 - and show the amount owed
-		in the third field. All of this should be done when the appropriate
-		button is pressed. The amount must be shown with 2 decimal places and prefixed with
-		a $ (dollar) sign.
+		The form given below has 3 fields. Let us assume that the user will type in the name of one of 3 products: Milk,
+		Apple, or Fish. The user may enter these using any mix of cases, so be aware. You need to check to ensure that
+		the user enters a value. If it is not one of these 3, let the user know. Then the user will enter a quantity.
+		You need to check to ensure that a quantity is entered (you may assume that 0 is a valid quantity) and that the
+		value is numeric. Once validated, use the following costs - 1 bottle of milk is $3.50; one apple is $0.99 and
+		one pound of fish is $5.99 - and show the amount owed in the third field. All of this should be done when the
+		appropriate button is pressed. The amount must be shown with 2 decimal places and prefixed with a $ (dollar)
+		sign.
 	</p>
 
-	<form action="" method="POST">
+	<form id="productForm">
 		<p>
 			<input type="text" name="product" size="20" placeholder="Enter product..." />
 			&nbsp; &nbsp;&nbsp;
 			<input type="text" name="quantity" size="20" placeholder="Enter quantity.." />
 		</p>
 		<p>
-			<input type="text" name="AmtDue" size="20" placeholder="show amount due" />
+			<input type="text" name="AmtDue" size="20" placeholder="show amount due" readonly />
 		</p>
 		<p>
-			<input class="but" type="submit" name="submit" value="What Do I Owe" />
+			<button type="button" class="but" onclick="calculateAmount()">What Do I Owe</button>
 			&nbsp; &nbsp;&nbsp;
-			<input class="but" type="reset" name="reset" value="Clear All" />
+			<input type="reset" class="but" value="Clear All" />
 		</p>
 	</form>
-	<h2>ChatGPT</h2>
+
+	<script>
+		function calculateAmount() {
+			var form = document.getElementById('productForm');
+			var product = form.product.value.toLowerCase();
+			var quantity = parseFloat(form.quantity.value);
+			var amountDueField = form.AmtDue;
+
+			if (!product || (product !== 'milk' && product !== 'apple' && product !== 'fish')) {
+				alert('Please enter a valid product: Milk, Apple, or Fish.');
+				return;
+			}
+
+			if (isNaN(quantity) || quantity < 0) {
+				alert('Please enter a valid numeric quantity that is 0 or greater.');
+				return;
+			}
+
+			var prices = { 'milk': 3.50, 'apple': 0.99, 'fish': 5.99 };
+			var price = prices[product];
+			var amountDue = (price * quantity).toFixed(2);
+			amountDueField.value = `$${amountDue}`;
+
+		}
+	</script>
+	<h2>ChatGPT description</h2>
 	<p>
-		I am super surprised with the way that the two pieces of code differ. I inputted the prompt into ChatGpt 3.5,
-		and expected it to be similar to what I spent hours working on. In the JavaScript portion there is a function
-		called calculateAmount, however it was not defined in the input section (onclick), which is very incorrect. The
-		alert commands are also incorrect, compared to my code. I also see that the defining the variables are vastly
-		different. There is no if statement for product, which is a vital piece that is missing. After, every variable
-		in the beginning there is getElementById, which I am not sure why that is there. The if statement for quantity
-		does not take in consideration that we are considering 0 as a valid quantity, and are looking for numerical
-		numbers above zero. I am confused why parseFloat is in the multiplication section, rather than at the top when
-		the quantity variable was defined. The two decimal points are also supposed to be after the multiplication, not
-		at the bottom with the incorrect set up for AmountDue.Value. All in all, there is a lot wrong with this code,
-		and I am honestly surprised that chatGPT did not do a better job.
+
+		I used five iterations to get the text to work. These are the questions I asked,”can you fix this code to answer
+		the question.””Please fix this code to answer the prompt” Lastly, I asked,”Can you please fix this quote to
+		answer the assignment question.” I then asked.” Do I have to define price per unit.” With a follow up question
+		of,”Why does my code not calculate the amount and instead only sends me an alert.” It was a combination of
+		constantly inputting the same code into ChatGPT 3.5 to be able to see all the different versions it has as an
+		output. When we spoke in office hours, you said it was fine that I did not understand everything that was going
+		on in the ChatGPT code. However, I will try and explain what I do understand. I understand that using the
+		toLowerCase allows for even if there is a mix of cases it will all be lowercase, which unifies everything. This
+		is used for product because in this one we are working with words not numbers like quantity. I understand that
+		parseFloat is used here for calculations, to make sure they are actual numbers. I essentially understand most,
+		because as I told you in office hours I did a lot of research on google and other things. However, I do not
+		understand this var price = prices[product];.
+		Maybe you can explain what that means. The calculations and putting it to 2 decimal points are clear, as well as
+		how to implement the dollar signs as well. I think it wasn’t terribly off. I do think however, it took me more
+		tries than I thought because I need to ask more specific questions next time. I think the comparison is not too off.
+
+
+
 	</p>
-
-
 </body>
 
 </html>
