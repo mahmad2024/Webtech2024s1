@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CS19 SlideShow</title>
+	<style>
+        p, h3 {text-align:center;}
+        img {width:30%; border-width: 10px; border-style: ridge; padding:10px}
+        button {width:150px; height:40px; 
+                background-color:green; font-family:arial; 
+                color:yellow;}
+        div#b{text-align:center;}
+	</style>
+    
+    
+    
+    <script type="text/javascript">
+
+        var mypics = new Array ("tiger5.jpg", "tiger6.jpg", "tiger7.jpg", "tiger8.jpg");
+        var mycaption = new Array ("Tiger 1", "Tiger 2", "Tiger 3", "Tiger 4");
+        var mycolors = new Array ("magenta", "blue", "lime", "pink", "orange", "red");
+
+        var c = 0;
+        var d = 0;
+
+        function showSlides()
+        {
+            const myimg = document.getElementById("daimg");
+            const mycap = document.getElementById("h");
+            myimg.src = mypics[c];
+            mycap.innerHTML = mycaption[c];
+            myimg.style.borderColor = mycolors[d];
+
+
+            ++c; /*same is c = c + 1;*/
+            if (c > mypics.length - 1)
+            {
+                c = 0;
+            }
+            
+            ++d;
+            if (d > mycolors.length - 1)
+            {
+                d = 0;
+            }
+
+            setTimeout("showSlides()", 1000);
+        }
+        
+    </script>
+</head>
+<body onload="showSlides()">
+    <p>
+    
+    <img id="daimg" src="tiger5.jpg" alt="Slide Show of Tigers" title="Tigers"/>
+    
+    </p>
+    <h3 id="h"></h3>
+    <!-- The above h3 will be used for showing a caption, if needed.-->
+    <div id="b">
+        <button>Click to stop/resume</button>
+    </div>
+     
+</body>
+</html>
