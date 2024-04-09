@@ -32,10 +32,10 @@
 function changeCurrency()
     {
       event.preventDefault();
-      
+      var mf,myyuan,mydollar 
       var myf = document.getElementById("f");
-      var myyuan = myf.y.value;
-      var mydollar = myf.d.value;
+      var myyuan = myf.yuan.value;
+      var mydollar = myf.dollar.value;
 
       
       if ((myyuan == "") && (mydollar == "")){
