@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>scrolling text</title>
+
+	<style>
+		/* Your styles go here */ 
+		h3#mover{position:absolute;}
+	</style> 
+	<script type="text/javascript"> 
+	var texts=new Array("caroline is so silly","she likes to do dumb things","sometimes she makes bad jokes","its ok shes my friend") 
+	var ctr =0;
+	pos =800; 
+
+	function scrollText()  
+	{
+	var mymover=document.getElementById("mover");
+   mymover.style.left = pos + "px";
+   mymover.innerHTML=texts[ctr];
+   pos =pos-5;
+   if(pos<100) 
+   {
+	pos=800;
+	++ctr;
+	if(ctr>texts.length-1) 
+	{
+		ctr=0;
+	}
+   } 
+   setTimeout("scrollText()",20); 
+	}
+	
+
+	
+	
+	
+	</script>
+
+
+
+</head> 
+
+
+<body onload="scrollText()"> 
+	
+	<!-- Your HTML goes here --> 
+	<div>
+		<h3 id="mover">Silly Carol</h3>
+	</div>
+	
+
+
+
+</body>
+
+</html>
