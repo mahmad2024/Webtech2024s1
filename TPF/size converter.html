@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title>Size Converter</title>
+
+	<style>
+	/* Your styles go here */
+    h1 {
+    font-size: 2em;
+    color: pink; 
+    margin: 0.5em 0;
+    text-align: center;
+} 
+h2{color:black;text-align:center;}
+    img {border: 10px;color: solid pink; display:block; margin:auto;} 
+      
+
+    
+     body{background-image:url(depositphotos_169197924-stock-photo-abstract-grunge-background.jpg)
+    }
+     form {
+    background-color: pink;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-right:auto;
+    margin-left:auto;
+    border: 1px solid #ccc;
+}
+        input[type="submit"], input[type="reset"] {height:30px; background-color:white;}
+        ol {font-size:1em; font-weight:bold; color: red}  
+        form {
+          background-color: #f8f8f8; 
+          color: #333; 
+          font-family: Arial, sans-serif;
+         padding: 20px;
+         border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+       width: 50%; 
+       margin: 2% auto;
+         box-sizing: border-box;
+}
+
+      
+        .topnav {
+        background-color: pink;
+        overflow: hidden;
+        font-family: Lucida Handwriting;
+    }
+
+    .topnav a {
+        float: left;
+        color: black;
+        display: block;
+        text-align: center;
+        padding: 14px 40px;
+        text-decoration: none;
+        font-size: 1em;
+    }
+
+    .active {
+        background-color: pink;
+        color: white;
+    }
+
+    .drpdwn {
+        float: left;
+        overflow: hidden;
+    }
+
+    .drpdwn .drpbtn {
+        font-size: 1em;
+        border: none;
+        outline: none;
+        color: black;
+        padding: 14px 40px;
+        font-family: inherit;
+        background-color: inherit;
+        margin: 0;
+    }
+
+    .drpdwncontent {
+        position: absolute;
+        display: none;
+        background-color: whitesmoke;
+        z-index: 1;
+    }
+
+    .drpdwn:hover .drpdwncontent {
+        display: block;
+    }
+
+    .drpdwncontent a {
+        /* these are all the A tags*/
+        float: none;
+        display: block;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        text-align: left;
+    }
+
+    .topnav a:hover,
+    .drpdwn:hover .drpbtn {
+        /* these make highlight the menu items*/
+        background-color: red;
+        color: black;
+    }
+
+    .drpdwncontent a:hover {
+        /* this just highlights the A tag or the drop down content to light grey*/
+        background-color: hotpink;
+        color: black;
+    }
+
+    .topnav .icon {
+        display: none;
+    }
+
+    @media screen and (max-width: 750px) {
+
+        .topnav a:not(:first-child),
+        .drpdwn .drpbtn {
+            display: none;
+        }
+
+        .topnav a.icon {
+            float: right;
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        .topnav.responsive {
+            position: relative;
+        }
+
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+
+        .topnav.responsive .drpdwn {
+            float: none;
+        }
+
+        .topnav.responsive .drpdwncontent {
+            position: relative;
+        }
+
+        .topnav.responsive .drpdwn .drpbtn {
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .about {
+        width: 27%;
+        margin: 3%;
+        text-align: justify;
+    }
+
+    @media screen and (max-width:750px) {
+        .row {
+            flex-direction: column;
+        }
+
+        .about {
+            width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    } 
+
+
+
+
+
+
+        
+	
+	</style>
+	<script type="text/javascript">  
+
+function myFunction() {
+        var x = document.getElementById("mytopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }  
+
+
+
+
+
+  
+  function showResult() 
+                {
+          var myf,myeuro,myus; 
+          myf=document.getElementById("form");
+          myeuro=myf.euro.value;  
+         myus=myf.us.value; 
+                        
+                
+                      if((myeuro=="") && (myus=="")) 
+                      {
+                        alert("Please enter at least one of the two values");
+                      } 
+                      else if ((myeuro!="")&&(myus!=""))
+                      {
+                        alert("Please enter one of the two values");
+                      } 
+                    else 
+                    {
+                      if((myeuro =="")||(myus!="")) 
+                      {
+                            if(isNaN(myus)==true)
+                            {
+                              alert("Please enter US size as a numerical value"); 
+                            }
+                            else 
+                            {
+                              myf.euro.value=parseFloat(myus)+30;
+                              event.preventDefault(); 
+                            }  
+                      }
+                      else 
+                      {
+                            if(isNaN(myeuro)==true)
+                            {
+                              alert( "Please enter Euro Size as a number only");
+                            } 
+                            else 
+                            { 
+                              myf.us.value = parseFloat(myeuro)-30;
+                              event.preventDefault(); 
+                            }
+                      }
+                    }
+                } 
+
+                function showimage() {
+               var myinp, myimg;
+               myimg = document.getElementById("image");
+               myinp = prompt("Please enter one either Maryam or Shankar");
+
+   
+         if (myinp == null) {
+          alert("No name was entered.");
+          return; 
+       }
+
+          myinp = myinp.toLowerCase();
+
+     if (myinp == "maryam") {
+           myimg.src = "pink shirt.jpeg"; 
+           myimg.alt = "Maryam in a pink shirt";
+           myimg.title = "Maryam";
+      } else if (myinp == "shankar") {
+           myimg.src = "ShankarG-1.jpg"; 
+           myimg.alt = "Shankar pic";
+           myimg.title = "Shankar";
+        } else {
+           alert("Come on this is really funny");
+     }
+   }
+		
+	
+
+	</script>
+	
+	
+  </head>
+
+  <body>  
+
+    <div id="banner">
+      
+
+    </div> 
+    <div class="topnav" id="mytopnav">
+        <a href="index.html" class="active">home</a>
+        <a href="contact me.html">Contact Me</a></a> 
+        <a href="About Me.htm">About Me</a> 
+        <a href="Where To Buy.htm">Where To Buy</a> 
+        <a href="MyFavOutfits.htm">My Favorite Outfits</a> 
+        <a href="SiteMap.html">SiteMap Navigation</a> 
+        <a href="Credits Page.html">Credits Page</a> 
+        <a href="Hairstyles.html"> Hair Styles</a> 
+        <a href="size converter.html">Size Converter</a>
+        <div class="drpdwn">
+            <button class="drpbtn">Occasions</button>
+            <div class="drpdwncontent">
+                <a href="Everyday Outfits.html">Everyday Class Outfit</a>
+                <a href="Dinner.html">Dinner</a>
+                <a href="fun with friends.html">Fun with Friends</a>
+            </div>
+  
+        </div> 
+
+
+
+
+
+
+
+
+	<!-- Your HTML goes here -->
+	<h1> Shoe Size Converter</h1>
+	<form  id="form"  action="" method="POST">
+        <p>
+            Euro Size: <input type="text" name="euro" size="12" placeholder="Euro size"/>
+        </p>
+        <p>
+            American Size: <input type="text" name="us" size="12" placeholder="American Size"/>
+        </p>
+        <p>
+            <input  onclick="showResult()"      type="submit" name="submit" value="Convert"/> &nbsp; &nbsp;
+            <input type="reset" name="reset" value="Clear"/>
+        </p>
+
+
+
+    </form> 
+    <h2>WHO HAS BETTER STYLE....you can be honest</h2>
+   
+  </body> 
+  <div>
+    <img id="image" onclick="showimage()"   src="pink shirt.jpeg"     alt="Maryam pic" title="" width="200"/>
+ </div>
+</html>
